@@ -30,6 +30,10 @@ const corsOptions = {
   credentials: true, // If you're using cookies
 };
 
+app.use(express.json({ limit: "4mb" }));
+app.use(cookieParser());
+app.use(cors(corsOptions));
+
 //Initialize socket server
 export const io = new Server(server, {
   cors: {
@@ -58,10 +62,6 @@ io.on("connection", (socket) => {
     io.emit("getOnlineUsers", Object.keys(userSocketMap));
   });
 });
-
-app.use(express.json({ limit: "4mb" }));
-app.use(cookieParser());
-app.use(cors(corsOptions));
 
 app.use("/api/status", (req, res) => res.send("Server is live."));
 app.use("/api/auth", userRouter);
