@@ -73,6 +73,7 @@ const AuthProvider = ({ children }) => {
       query: {
         userId: userData._id,
       },
+      transports: ["polling"],
     });
 
     newSocket.connect();
