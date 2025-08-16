@@ -49,7 +49,7 @@ const ChatContainer = () => {
   }, [messages]);
 
   return selectedUser ? (
-    <div className="h-full relative backdrop-blur-lg overflow-auto">
+    <div className="h-full relative backdrop-blur-lg overflow-auto chat-scroll">
       {/* Top Header */}
       <div className="flex items-center gap-3 py-4 px-4 border-b border-stone-500">
         <img src={selectedUser.profilePic || assets.avatar_icon} alt="" className="w-[35px] aspect-[1/1] rounded-full" />
@@ -67,7 +67,7 @@ const ChatContainer = () => {
       </div>
 
       {/* Messages Area */}
-      <div className="flex flex-col h-[calc(100%-120px)] overflow-y-auto p-3 pb-6">
+      <div className="flex flex-col h-[calc(100%-120px)] overflow-y-auto p-3 pb-6 chat-scroll">
         {messages.map((msg, index) => (
           <div
             key={index}

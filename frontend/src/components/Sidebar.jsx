@@ -30,7 +30,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`bg-[#8182B2]/10 h-full p-5 rounded-r-xl overflow-y-scroll text-white ${
+      className={`sidebar-scroll bg-[#8182B2]/10 h-full p-5 rounded-r-xl overflow-y-scroll text-white ${
         selectedUser ? "max-md:hidden" : ""
       } `}
     >
